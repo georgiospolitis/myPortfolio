@@ -1,24 +1,10 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
-import Hero from './Hero';
-import Navbar from './Navbar';
-import About from './About';
-import Tech from './Tech';
-import Experience from './Experience';
-import Works from './Works';
-import Feedbacks from './Feedbacks';
-import Contact from './Contact';
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import Services from "./Services";
+import Work from "./Work";
+import About from "./About";
+import Process from "./Process";
+import CTA from "./CTA";
+import Footer from "./Footer";
 
-export {
-  Hero,
-  Navbar,
-  About,
-  Tech,
-  Experience,
-  Works,
-  Feedbacks,
-  Contact,
-  EarthCanvas, 
-  BallCanvas, 
-  ComputersCanvas, 
-  StarsCanvas
-}
+export { Navbar, Hero, Services, Work, About, Process, CTA, Footer };
