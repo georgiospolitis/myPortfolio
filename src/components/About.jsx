@@ -48,7 +48,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-      &nbsp;I am a dedicated person with a strong passion for frontend development.
+      &nbsp;I aaaam a dedicated person with a strong passion for frontend development.
       With a Bachelor's Degree in Applied Informatics and valuable experience
       as a Junior Frontend Developer, I am actively seeking opportunities to
       expand my skill set and contribute to a dynamic work environment.
