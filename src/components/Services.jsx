@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -29,12 +30,19 @@ const ServiceRow = ({ index, title, icon: Icon, description }) => (
   </motion.div>
 );
 
+ServiceRow.propTypes = {
+  index: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  icon: PropTypes.elementType.isRequired,
+};
+
 const Services = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.eyebrow}>Services</p>
-        <h2 className={styles.h2}>What I can build for you</h2>
+        <p className={styles.eyebrow}>Υπηρεσιες</p>
+        <h2 className={styles.h2}>Τι μπορώ να κατασκευάσω για εσάς</h2>
       </motion.div>
 
       <div className="mt-14">

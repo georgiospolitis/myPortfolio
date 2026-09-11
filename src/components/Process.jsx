@@ -9,8 +9,8 @@ const Process = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.eyebrow}>Process</p>
-        <h2 className={styles.h2}>How a project comes together</h2>
+        <p className={styles.eyebrow}>Διαδικασια</p>
+        <h2 className={styles.h2}>Πώς υλοποιείται ένα project</h2>
       </motion.div>
 
       <div className="mt-16 grid sm:grid-cols-4 gap-10 sm:gap-6">

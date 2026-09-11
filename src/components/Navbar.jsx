@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import { navLinks } from "../constants";
+import logoBlack from "../assets/logo-black.svg";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -24,10 +25,10 @@ const Navbar = () => {
       <div className="max-w-container mx-auto sm:px-10 px-6 h-[76px] flex items-center justify-between">
         <a
           href="#top"
-          className="font-serif text-[16px] sm:text-[18px] tracking-[0.02em] text-ink font-medium"
+          className="flex items-center"
           onClick={() => setToggle(false)}
         >
-          GEORGIOS POLITIS
+          <img src={logoBlack} alt="Georgios Politis" className="h-8 sm:h-9 w-auto" />
         </a>
 
         <ul className="hidden md:flex items-center gap-10">
@@ -46,7 +47,7 @@ const Navbar = () => {
 
         <a href="#contact" className="hidden md:inline-flex">
           <button className="bg-ink text-cream px-6 py-3 rounded-full text-[14px] font-medium tracking-wide transition-all duration-300 hover:bg-clay">
-            Start a project
+            Ξεκινήστε ένα project
           </button>
         </a>
 
@@ -76,7 +77,7 @@ const Navbar = () => {
             <li>
               <a href="#contact" onClick={() => setToggle(false)}>
                 <button className="w-full bg-ink text-cream px-6 py-3.5 rounded-full text-[15px] font-medium mt-2">
-                  Start a project
+                  Ξεκινήστε ένα project
                 </button>
               </a>
             </li>

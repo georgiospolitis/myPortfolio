@@ -7,70 +7,70 @@ import {
 } from "react-icons/fi";
 
 export const navLinks = [
-  { id: "work", title: "Work" },
-  { id: "services", title: "Services" },
-  { id: "about", title: "About" },
-  { id: "contact", title: "Contact" },
+  { id: "work", title: "Έργα" },
+  { id: "services", title: "Υπηρεσίες" },
+  { id: "about", title: "Σχετικά" },
+  { id: "contact", title: "Επικοινωνία" },
 ];
 
 export const services = [
   {
     index: "01",
-    title: "Websites",
+    title: "Ιστοσελίδες",
     icon: FiGlobe,
     description:
-      "Professional, responsive websites designed around your brand and business goals.",
+      "Επαγγελματικές, responsive ιστοσελίδες σχεδιασμένες γύρω από το brand και τους επιχειρηματικούς σας στόχους.",
   },
   {
     index: "02",
     title: "E-commerce",
     icon: FiShoppingBag,
     description:
-      "Online stores with modern shopping experiences and easy product management.",
+      "Ηλεκτρονικά καταστήματα με σύγχρονες εμπειρίες αγορών και εύκολη διαχείριση προϊόντων.",
   },
   {
     index: "03",
-    title: "Custom Development",
+    title: "Προσαρμοσμένη Ανάπτυξη",
     icon: FiCode,
     description:
-      "Custom functionality and web applications when a standard website is not enough.",
+      "Προσαρμοσμένη λειτουργικότητα και web εφαρμογές όταν μια απλή ιστοσελίδα δεν είναι αρκετή.",
   },
   {
     index: "04",
-    title: "Integrations",
+    title: "Ενσωματώσεις",
     icon: FiLink,
     description:
-      "APIs, payment systems, third-party services and business tools connected to your site.",
+      "APIs, συστήματα πληρωμών, υπηρεσίες τρίτων και επιχειρηματικά εργαλεία συνδεδεμένα στο site σας.",
   },
   {
     index: "05",
-    title: "Maintenance & Support",
+    title: "Συντήρηση & Υποστήριξη",
     icon: FiTool,
     description:
-      "Updates, improvements, monitoring and ongoing technical support after launch.",
+      "Ενημερώσεις, βελτιώσεις, παρακολούθηση και συνεχής τεχνική υποστήριξη μετά την κυκλοφορία.",
   },
 ];
 
 export const process = [
   {
     index: "01",
-    title: "Discover",
-    description: "Understand the business, goals and requirements.",
+    title: "Ανακάλυψη",
+    description: "Κατανόηση της επιχείρησης, των στόχων και των απαιτήσεων.",
   },
   {
     index: "02",
-    title: "Design",
-    description: "Create the visual direction and user experience.",
+    title: "Σχεδιασμός",
+    description: "Δημιουργία της οπτικής κατεύθυνσης και της εμπειρίας χρήστη.",
   },
   {
     index: "03",
-    title: "Build",
-    description: "Develop the website and functionality.",
+    title: "Κατασκευή",
+    description: "Ανάπτυξη της ιστοσελίδας και της λειτουργικότητας.",
   },
   {
     index: "04",
-    title: "Launch",
-    description: "Test, deploy and provide ongoing support.",
+    title: "Λανσάρισμα",
+    description: "Δοκιμή, δημοσίευση και παροχή συνεχούς υποστήριξης.",
   },
 ];
 
@@ -78,31 +78,32 @@ export const projects = [
   {
     index: "01",
     label: "Concept Project",
-    category: "Restaurant",
-    name: "A table always ready",
+    category: "Εστιατόριο",
+    name: "Ένα τραπέζι πάντα έτοιμο",
     description:
-      "A warm, appetite-driven website for a neighborhood restaurant — menu, story and reservations designed to feel like the room itself.",
-    tags: ["Website", "Reservations", "WordPress"],
+      "Μια ζεστή ιστοσελίδα για ένα συνοικιακό εστιατόριο — μενού, ιστορία και κρατήσεις σχεδιασμένα για να δίνουν την αίσθηση του ίδιου του χώρου.",
+    tags: ["Ιστοσελίδα", "Κρατήσεις", "WordPress"],
     tone: "clay",
+    link: "/concepts/restaurant/index.html",
   },
   {
     index: "02",
     label: "Concept Project",
-    category: "Barbershop",
-    name: "Sharp, on the hour",
+    category: "Κουρείο",
+    name: "Ακριβές, στην ώρα του",
     description:
-      "A confident, no-nonsense site built around one job: getting a chair booked. Clean type, clear pricing, instant booking.",
-    tags: ["Website", "Online Booking", "Elementor"],
+      "Ένα σίγουρο, ξεκάθαρο site φτιαγμένο γύρω από έναν σκοπό: το κλείσιμο ραντεβού. Καθαρή τυπογραφία, ξεκάθαρες τιμές, άμεση κράτηση.",
+    tags: ["Ιστοσελίδα", "Online Κρατήσεις", "Elementor"],
     tone: "ink",
   },
   {
     index: "03",
     label: "Concept Project",
     category: "E-commerce",
-    name: "A store that sells itself",
+    name: "Ένα κατάστημα που πουλάει από μόνο του",
     description:
-      "A fast, focused online store built for a small product catalog — easy to browse, easy to check out, easy to manage.",
-    tags: ["E-commerce", "Payments", "Product Catalog"],
+      "Ένα γρήγορο, εστιασμένο ηλεκτρονικό κατάστημα φτιαγμένο για μικρό κατάλογο προϊόντων — εύκολη περιήγηση, εύκολο checkout, εύκολη διαχείριση.",
+    tags: ["E-commerce", "Πληρωμές", "Κατάλογος Προϊόντων"],
     tone: "sage",
   },
 ];

@@ -17,7 +17,7 @@ const Footer = () => {
 
         <div>
           <p className="text-[13px] uppercase tracking-[0.14em] text-stone mb-4">
-            Menu
+            Μενου
           </p>
           <ul className="flex flex-col gap-3">
             {navLinks.map((nav) => (
@@ -35,7 +35,7 @@ const Footer = () => {
 
         <div>
           <p className="text-[13px] uppercase tracking-[0.14em] text-stone mb-4">
-            Connect
+            Επικοινωνια
           </p>
           <ul className="flex flex-col gap-3 mb-5">
             <li>

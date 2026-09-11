@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ΨΗΝΩ & ΤΡΩΩ — Σύγχρονη Κουζίνα με Ξυλόφουρνο</title>
+  <meta name="description" content="Το ΨΗΝΩ & ΤΡΩΩ είναι ένα σύγχρονο εστιατόριο με ξυλόφουρνο που σερβίρει αυθεντικά, εποχικά πιάτα σε ένα ζεστό, αξέχαστο περιβάλλον." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">ΨΗΝΩ <span>&amp;</span> ΤΡΩΩ</a>
+
+      <div class="nav__menu" id="navMenu">
+        <nav class="nav__links" id="navLinks">
+          <a href="#home">Αρχική</a>
+          <a href="#about">Σχετικά</a>
+          <a href="#menu">Μενού</a>
+          <a href="#hours">Ωράριο</a>
+          <a href="#contact">Επικοινωνία</a>
+        </nav>
+
+        <a href="#contact" class="btn btn--primary btn--small nav__cta">Κράτηση Τραπεζιού</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Εναλλαγή μενού" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__bg" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop');"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content reveal">
+      <p class="eyebrow eyebrow--light">Κουζίνα με Ξυλόφουρνο &amp; Τραπέζι</p>
+      <h1 class="hero__title">Αυθεντικές γεύσεις,<br />αξέχαστη ατμόσφαιρα.</h1>
+      <p class="hero__subtitle">
+        Ένα σύγχρονο συνοικιακό εστιατόριο χτισμένο γύρω από το μαγείρεμα σε ανοιχτή φωτιά,
+        τα εποχικά υλικά και την ειλικρινή φιλοξενία.
+      </p>
+
+      <div class="btn-group">
+        <a href="#contact" class="btn btn--primary">Κράτηση Τραπεζιού</a>
+        <a href="#menu" class="btn btn--ghost btn--ghost-light">Δείτε το Μενού</a>
+      </div>
+    </div>
+
+    <a href="#about" class="hero__scroll" aria-label="Μετάβαση στην ενότητα σχετικά">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT / VIBE ============ -->
+  <section class="about" id="about">
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <img
+          src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1200&auto=format&fit=crop"
+          alt="Στρωμένο τραπέζι στο εστιατόριο ΨΗΝΩ & ΤΡΩΩ"
+          loading="lazy"
+        />
+        <div class="about__badge">
+          <span class="about__badge-num">12</span>
+          <span class="about__badge-label">Χρόνια<br />μαγειρικής σε ξυλόφουρνο</span>
+        </div>
+      </div>
+
+      <div class="about__text reveal">
+        <p class="eyebrow">Η Ιστορία Μας</p>
+        <h2 class="h2">Μια κουζίνα χτισμένη γύρω από τη φωτιά, χωρίς παρακάμψεις</h2>
+        <p class="body-text">
+          Κάθε πιάτο στο ΨΗΝΩ &amp; ΤΡΩΩ ξεκινά με το ίδιο πράγμα: αληθινή φωτιά 
+          και αληθινά υλικά. Συνεργαζόμαστε με τοπικές φάρμες και μικρούς παραγωγούς, 
+          και αφήνουμε τον ξυλόφουρνο και την ανοιχτή ψησταριά να κάνουν την περισσότερη 
+          δουλειά — απλή τεχνική, ειλικρινής γεύση, τίποτα υπερβολικά στημένο.
+        </p>
+        <p class="body-text">
+          Είναι το είδος του μέρους που πάντα θέλαμε να τρώμε κι εμείς οι ίδιοι: 
+          ζεστό, ανεπιτήδευτο και αθόρυβα σοβαρό με το φαγητό.
+        </p>
+
+        <ul class="about__facts">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20" stroke-linecap="round"/></svg>
+            Υλικά τοπικής προέλευσης
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Φρέσκο, εποχικό μενού
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" stroke-linejoin="round"/></svg>
+            Οικογενειακή επιχείρηση από την πρώτη μέρα
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU HIGHLIGHTS ============ -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu__header reveal">
+        <p class="eyebrow eyebrow--center">Μενού</p>
+        <h2 class="h2">Σπεσιαλιτέ</h2>
+        <p class="body-text menu__intro">
+          Μια μικρή επιλογή από ένα μενού που αλλάζει με τις εποχές —
+          κάθε πιάτο τελειώνει σε ανοιχτή φωτιά.
+        </p>
+      </div>
+
+      <div class="menu__grid reveal">
+        <div class="menu__item">
+          <div class="menu__item-row">
+            <h3>Καψαλισμένο Χταπόδι</h3>
+            <span class="menu__leader"></span>
+            <span class="menu__price">18</span>
+          </div>
+          <p>Καπνιστή πάπρικα, σπαστή πατάτα, σάλτσα βέρντε</p>
+        </div>
+
+        <div class="menu__item">
+          <div class="menu__item-row">
+            <h3>Μπουράτα στον Ξυλόφουρνο</h3>
+            <span class="menu__leader"></span>
+            <span class="menu__price">14</span>
+          </div>
+          <p>Παραδοσιακή ντομάτα, λάδι βασιλικού, τρίμμα προζυμιού</p>
+        </div>
+
+        <div class="menu__item">
+          <div class="menu__item-row">
+            <h3>Ribeye Ξηρής Ωρίμανσης</h3>
+            <span class="menu__leader"></span>
+            <span class="menu__price">42</span>
+          </div>
+          <p>Βούτυρο μεδουλίου, καψαλισμένο ασκαλώνιο, σάλτσα κόκκινου κρασιού</p>
+        </div>
+
+        <div class="menu__item">
+          <div class="menu__item-row">
+            <h3>Ολόκληρο Ψητό Λαβράκι</h3>
+            <span class="menu__leader"></span>
+            <span class="menu__price">36</span>
+          </div>
+          <p>Εσπεριδοειδή, φινόκιο, ελαιόλαδο, θαλασσινό αλάτι</p>
+        </div>
+
+        <div class="menu__item">
+          <div class="menu__item-row">
+            <h3>Ψητό Καρότο &amp; Φάρο</h3>
+            <span class="menu__leader"></span>
+            <span class="menu__price">17</span>
+          </div>
+          <p>Χτυπημένη φέτα, μέλι με τσίλι, ψημένοι σπόροι</p>
+        </div>
+
+        <div class="menu__item">
+          <div class="menu__item-row">
+            <h3>Τάρτα Μαύρης Σοκολάτας</h3>
+            <span class="menu__leader"></span>
+            <span class="menu__price">12</span>
+          </div>
+          <p>Κρέμα εσπρέσο, θαλασσινό αλάτι, ελαιόλαδο</p>
+        </div>
+      </div>
+
+      <div class="menu__cta reveal">
+        <p>Το πλήρες μενού είναι διαθέσιμο στο κατάστημα και ανανεώνεται εποχικά.</p>
+        <a href="#contact" class="btn btn--ghost">Κάντε Κράτηση</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER: HOURS, ADDRESS, CONTACT ============ -->
+  <footer class="site-footer" id="hours">
+    <div class="container footer__grid">
+      <div class="footer__col reveal">
+        <p class="eyebrow">Επισκεφθείτε Μας</p>
+        <h2 class="h3">ΨΗΝΩ &amp; ΤΡΩΩ</h2>
+
+        <div class="footer__block">
+          <h4>Διεύθυνση</h4>
+          <p>Αριστοτέλους 156<br />Αλεξάνδρεια, Ελλάδα 59300</p>
+        </div>
+
+        <div class="footer__block">
+          <h4>Ώρες Λειτουργίας</h4>
+          <ul class="hours-list">
+            <li><span>Δευ – Πεμ</span><span>17:00 – 23:00</span></li>
+            <li><span>Παρ – Σαβ</span><span>13:00 – 00:00</span></li>
+            <li><span>Κυριακή</span><span>13:00 – 22:00</span></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h4>Επικοινωνία</h4>
+          <p><a href="tel:+302333012345">+30 233 301 2345</a></p>
+          <p><a href="mailto:hello@psinokaitroo.example">hello@psinokaitroo.example</a></p>
+        </div>
+      </div>
+
+      <div class="footer__col reveal" id="contact">
+        <p class="eyebrow">Κρατήσεις</p>
+        <h2 class="h3">Κάντε κράτηση</h2>
+        <p class="body-text footer__form-intro">
+          Για παρέες 8 ατόμων και άνω, παρακαλούμε καλέστε μας απευθείας.
+        </p>
+
+        <form class="reservation-form" id="reservationForm" novalidate>
+          <div class="form-row">
+            <label>
+              <span>Όνομα</span>
+              <input type="text" name="name" required placeholder="Το ονοματεπώνυμό σας" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="you@email.com" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span>Ημερομηνία</span>
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              <span>Άτομα</span>
+              <select name="guests" required>
+                <option value="">Επιλέξτε</option>
+                <option>1 άτομο</option>
+                <option>2 άτομα</option>
+                <option>3 άτομα</option>
+                <option>4 άτομα</option>
+                <option>5–7 άτομα</option>
+              </select>
+            </label>
+          </div>
+          <label class="full">
+            <span>Μήνυμα (προαιρετικό)</span>
+            <textarea name="message" rows="3" placeholder="Υπάρχει κάτι που πρέπει να γνωρίζουμε;"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn--primary">Αίτημα Κράτησης</button>
+          <p class="form-success" id="formSuccess" hidden>
+            Σας ευχαριστούμε — το αίτημά σας καταγράφηκε. Θα επιβεβαιώσουμε σύντομα.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© <span id="year"></span> ΨΗΝΩ &amp; ΤΡΩΩ. Concept project — δεν είναι πραγματικό εστιατόριο.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

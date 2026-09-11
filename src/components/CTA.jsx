@@ -37,13 +37,13 @@ const CTA = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Σας ευχαριστώ. Θα επικοινωνήσω μαζί σας το συντομότερο δυνατό.");
           setForm({ name: "", email: "", message: "" });
         },
         (error) => {
           setLoading(false);
           console.error(error);
-          alert("Something went wrong. Please try again.");
+          alert("Κάτι πήγε στραβά. Παρακαλώ προσπαθήστε ξανά.");
         }
       );
   };
@@ -54,10 +54,10 @@ const CTA = () => {
         variants={textVariant()}
         className="text-center max-w-2xl mx-auto"
       >
-        <p className={`${styles.eyebrow} justify-center`}>Get in touch</p>
-        <h2 className={styles.h2}>Have a project in mind?</h2>
+        <p className={`${styles.eyebrow} justify-center`}>Επικοινωνια</p>
+        <h2 className={styles.h2}>Έχετε κάποιο project στο μυαλό σας;</h2>
         <p className="mt-4 text-stone text-[17px] sm:text-[18px] leading-[1.7]">
-          Let’s build something that works for your business.
+          Ας φτιάξουμε κάτι που λειτουργεί για την επιχείρησή σας.
         </p>
       </motion.div>
 
@@ -69,32 +69,32 @@ const CTA = () => {
           className="flex flex-col gap-5"
         >
           <label className="flex flex-col gap-2">
-            <span className="text-ink text-[14px] font-medium">Your name</span>
+            <span className="text-ink text-[14px] font-medium">Το όνομά σας</span>
             <input
               type="text"
               name="name"
               required
               value={form.name}
               onChange={handleChange}
-              placeholder="Jane Smith"
+              placeholder="Μαρία Παπαδοπούλου"
               className="bg-paper border border-line py-3.5 px-5 rounded-xl placeholder:text-stone/60 text-ink outline-none focus:border-ink transition-colors"
             />
           </label>
           <label className="flex flex-col gap-2">
-            <span className="text-ink text-[14px] font-medium">Your email</span>
+            <span className="text-ink text-[14px] font-medium">Το email σας</span>
             <input
               type="email"
               name="email"
               required
               value={form.email}
               onChange={handleChange}
-              placeholder="jane@yourbusiness.com"
+              placeholder="maria@yourbusiness.com"
               className="bg-paper border border-line py-3.5 px-5 rounded-xl placeholder:text-stone/60 text-ink outline-none focus:border-ink transition-colors"
             />
           </label>
           <label className="flex flex-col gap-2">
             <span className="text-ink text-[14px] font-medium">
-              Tell me about your project
+              Πείτε μου για το project σας
             </span>
             <textarea
               rows={5}
@@ -102,13 +102,13 @@ const CTA = () => {
               required
               value={form.message}
               onChange={handleChange}
-              placeholder="What are you looking to build?"
+              placeholder="Τι θα θέλατε να κατασκευάσουμε;"
               className="bg-paper border border-line py-3.5 px-5 rounded-xl placeholder:text-stone/60 text-ink outline-none focus:border-ink transition-colors resize-none"
             />
           </label>
 
           <button type="submit" className={`${styles.btnPrimary} w-fit mt-2`}>
-            {loading ? "Sending..." : "Start a project"}
+            {loading ? "Αποστολή..." : "Ξεκινήστε ένα project"}
           </button>
         </motion.form>
 
@@ -118,7 +118,7 @@ const CTA = () => {
         >
           <div>
             <p className="text-[13px] uppercase tracking-[0.16em] text-cream/60">
-              Prefer email?
+              Προτιμάτε email;
             </p>
             <a
               href="mailto:gpolitis.dev@gmail.com"

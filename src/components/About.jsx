@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import logo from "../assets/logo.svg";
 
 const facts = [
-  "Based in Alexandria, Greece",
-  "Remote & on-site clients",
-  "Modern web tech · WordPress",
+  "Με έδρα την Αλεξάνδρεια, Ελλάδα",
+  "Πελάτες εξ αποστάσεως & από κοντά",
+  "Σύγχρονες τεχνολογίες web · WordPress",
 ];
 
 const About = () => {
@@ -17,31 +18,29 @@ const About = () => {
         variants={fadeIn("right", "tween", 0.1, 0.7)}
         className="relative aspect-[4/5] rounded-[24px] bg-ink flex items-center justify-center mx-auto max-w-sm w-full"
       >
-        <span className="font-serif text-cream text-[120px] leading-none select-none">
-          GP
-        </span>
+        <img src={logo} alt="Λογότυπο Γεώργιος Πολίτης" className="w-2/3 max-w-[180px] select-none" />
       </motion.div>
 
       <div>
         <motion.div variants={textVariant()}>
-          <p className={styles.eyebrow}>About</p>
-          <h2 className={styles.h2}>The person behind the work</h2>
+          <p className={styles.eyebrow}>Σχετικα</p>
+          <h2 className={styles.h2}>Ο άνθρωπος πίσω από τη δουλειά</h2>
         </motion.div>
 
         <motion.p
           variants={fadeIn("up", "tween", 0.15, 0.7)}
           className="mt-6 text-stone text-[17px] sm:text-[18px] leading-[1.75] max-w-xl"
         >
-          I’m George, a freelance web developer focused on building modern
-          websites, e-commerce experiences and custom web solutions for small
-          and medium-sized businesses. I work with modern web technologies as
-          well as WordPress, so whichever platform fits your business best,
-          you’re covered.
+          Είμαι ο Γιώργος, ένας freelance web developer που εστιάζει στην κατασκευή σύγχρονων 
+          ιστοσελίδων, εμπειριών e-commerce και προσαρμοσμένων web λύσεων για μικρές 
+          και μεσαίες επιχειρήσεις. Δουλεύω με σύγχρονες τεχνολογίες web καθώς και 
+          με WordPress, οπότε όποια πλατφόρμα κι αν ταιριάζει καλύτερα στην επιχείρησή σας, 
+          είστε καλυμμένοι.
           <br />
           <br />
-          I keep things direct — no account managers, no middlemen. You talk
-          to the person actually building your site, from the first
-          conversation to the day it launches and beyond.
+          Κρατάω τα πράγματα άμεσα — χωρίς account managers, χωρίς μεσάζοντες. Μιλάτε 
+          με τον άνθρωπο που πραγματικά κατασκευάζει το site σας, από την πρώτη 
+          συζήτηση μέχρι την ημέρα που θα βγει στον αέρα και μετέπειτα.
         </motion.p>
 
         <motion.div
