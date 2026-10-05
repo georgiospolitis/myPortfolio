@@ -5,16 +5,16 @@ import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import PropTypes from "prop-types";
 
 import { styles } from "../styles";
-import { websiteStyles, STYLE_SELECTED_EVENT } from "../constants";
+import { websiteStyles, styleLabel, styleStack, STYLE_SELECTED_EVENT } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import StylePreview from "./StylePreview";
 import StyleDetail from "./StyleDetail";
 
 const steps = [
-  "Διαλέγετε το στυλ που σας ταιριάζει",
-  "Το προσαρμόζω στο brand και το περιεχόμενό σας",
-  "Παραλαμβάνετε τη δική σας ιστοσελίδα WordPress",
+  "Διαλέγετε ένα στυλ",
+  "Το προσαρμόζω στην επιχείρησή σας",
+  "Το site σας βγαίνει online",
 ];
 
 // The heading and each card reveal on their own: on small screens this section
@@ -25,21 +25,6 @@ const revealOnScroll = (i) => ({
   whileInView: "show",
   viewport: { once: true, amount: 0.2 },
 });
-
-const Tags = ({ tags }) => (
-  <div className="mt-5 flex flex-wrap gap-2">
-    {tags.map((tag) => (
-      <span
-        key={tag}
-        className="text-[13px] text-ink/70 border border-line rounded-full px-3.5 py-1.5"
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-);
-
-Tags.propTypes = { tags: PropTypes.arrayOf(PropTypes.string).isRequired };
 
 const StyleCard = ({ style, i, onOpen }) => (
   <motion.article {...revealOnScroll(i)} className="group relative">
@@ -58,7 +43,7 @@ const StyleCard = ({ style, i, onOpen }) => (
         {style.name}
       </h3>
       <p className="mt-3 text-stone text-[16px] leading-[1.7] max-w-md">{style.description}</p>
-      <Tags tags={style.tags} />
+      <p className="mt-4 text-[13px] text-stone">{styleStack(style)}</p>
 
       {/* Stretched button: the whole card is clickable, but its accessible name stays short. */}
       <button
@@ -79,7 +64,9 @@ StyleCard.propTypes = {
     name: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    theme: PropTypes.string.isRequired,
+    builder: PropTypes.string.isRequired,
+    supportsWooCommerce: PropTypes.bool,
   }).isRequired,
   i: PropTypes.number.isRequired,
   onOpen: PropTypes.func.isRequired,
@@ -105,8 +92,7 @@ const CustomCard = ({ i }) => (
         Δεν βρήκατε αυτό που ψάχνατε;
       </h3>
       <p className="mt-3 text-stone text-[16px] leading-[1.7] max-w-md">
-        Αν κανένα στυλ δεν σας εκφράζει, σχεδιάζω την ιστοσελίδα σας από την αρχή, γύρω
-        από το brand και τους στόχους σας.
+        Αν κανένα στυλ δεν σας ταιριάζει, σχεδιάζω το site σας από την αρχή.
       </p>
       <a
         href="#contact"
@@ -142,7 +128,7 @@ const WebsiteStyles = () => {
   const chooseStyle = useCallback((style) => {
     setActiveIndex(null);
     window.dispatchEvent(
-      new CustomEvent(STYLE_SELECTED_EVENT, { detail: { slug: style.slug, name: style.name } })
+      new CustomEvent(STYLE_SELECTED_EVENT, { detail: { slug: style.slug, name: styleLabel(style) } })
     );
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   }, []);
@@ -158,14 +144,13 @@ const WebsiteStyles = () => {
         viewport={{ once: true, amount: 0.5 }}
       >
         <p className={styles.eyebrow}>Στυλ ιστοσελιδας</p>
-        <h2 className={styles.h2}>Διαλέξτε ένα στυλ. Εγώ το κάνω δικό σας.</h2>
+        <h2 className={styles.h2}>Διαλέξτε το στυλ που σας ταιριάζει</h2>
       </motion.div>
 
       <p className="mt-6 text-stone text-[16px] sm:text-[17px] leading-[1.7] max-w-2xl">
-        Επιλέξτε τη σχεδιαστική κατεύθυνση που σας αρέσει. Τη χρησιμοποιώ ως αφετηρία
-        και προσαρμόζω την τελική ιστοσελίδα WordPress γύρω από το brand, το περιεχόμενο
-        και τις ανάγκες της επιχείρησής σας — από τα χρώματα και την τυπογραφία μέχρι τις
-        ενότητες, τη λειτουργικότητα και το e-shop.
+        Κάθε στυλ βασίζεται σε ένα έτοιμο WordPress template. Ξεκινάω από αυτό και αλλάζω
+        χρώματα, κείμενα, φωτογραφίες και σελίδες, ώστε το site να ταιριάζει στη δική σας
+        επιχείρηση.
       </p>
 
       <ol className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-8">

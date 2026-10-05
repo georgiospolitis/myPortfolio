@@ -19,15 +19,14 @@ const unlockScroll = () => {
 };
 
 // Modal behaviour: lock page scroll, move focus in, close on Escape and keep
-// Tab inside `ref`. While `pausedRef.current` is true (a dialog stacked on top
-// is open) keyboard handling is left to that dialog.
-export const useModal = (ref, onClose, { initialFocusRef, pausedRef } = {}) => {
+// Tab inside `ref`.
+export const useModal = (ref, onClose, { initialFocusRef } = {}) => {
   useEffect(() => {
     lockScroll();
     (initialFocusRef?.current || ref.current)?.focus();
 
     const onKeyDown = (e) => {
-      if (pausedRef?.current || !ref.current) return;
+      if (!ref.current) return;
       if (e.key === "Escape") {
         e.preventDefault();
         onClose();

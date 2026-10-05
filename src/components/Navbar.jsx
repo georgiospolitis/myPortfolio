@@ -47,7 +47,7 @@ const Navbar = () => {
 
         <a href="#contact" className="hidden md:inline-flex">
           <button className="bg-ink text-cream px-6 py-3 rounded-full text-[14px] font-medium tracking-wide transition-all duration-300 hover:bg-clay">
-            Ξεκινήστε ένα project
+            Ας μιλήσουμε
           </button>
         </a>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
             <li>
               <a href="#contact" onClick={() => setToggle(false)}>
                 <button className="w-full bg-ink text-cream px-6 py-3.5 rounded-full text-[15px] font-medium mt-2">
-                  Ξεκινήστε ένα project
+                  Ας μιλήσουμε
                 </button>
               </a>
             </li>

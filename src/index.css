@@ -46,8 +46,3 @@ body {
     transform: translateX(-50%);
   }
 }
-
-/* Website-style demos size themselves to their preview frame (cq-* variants) */
-.demo-root {
-  container: demo / inline-size;
-}

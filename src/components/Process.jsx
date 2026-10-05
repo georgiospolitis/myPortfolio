@@ -10,7 +10,7 @@ const Process = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.eyebrow}>Διαδικασια</p>
-        <h2 className={styles.h2}>Πώς υλοποιείται ένα project</h2>
+        <h2 className={styles.h2}>Πώς δουλεύουμε</h2>
       </motion.div>
 
       <div className="mt-16 grid sm:grid-cols-4 gap-10 sm:gap-6">

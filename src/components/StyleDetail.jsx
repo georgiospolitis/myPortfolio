@@ -1,27 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { FiArrowLeft, FiArrowRight, FiMaximize2, FiX } from "react-icons/fi";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiX } from "react-icons/fi";
 import PropTypes from "prop-types";
 
 import { styles } from "../styles";
-import { styleCustomizations } from "../constants";
+import { styleStack } from "../constants";
 import { useModal } from "../utils/useModal";
 import StylePreview from "./StylePreview";
-import StyleFullPreview from "./StyleFullPreview";
-
-// The scrollable in-dialog preview only makes sense with room for it; on
-// phones the dialog shows the first screen and the full preview does the rest.
-const useWideScreen = () => {
-  const query = "(min-width: 640px)";
-  const [wide, setWide] = useState(() => window.matchMedia(query).matches);
-  useEffect(() => {
-    const mql = window.matchMedia(query);
-    const onChange = (e) => setWide(e.matches);
-    mql.addEventListener("change", onChange);
-    return () => mql.removeEventListener("change", onChange);
-  }, []);
-  return wide;
-};
 
 const DetailHeading = ({ children }) => (
   <p className="text-[12px] uppercase tracking-[0.16em] text-stone mb-3">{children}</p>
@@ -32,18 +17,8 @@ DetailHeading.propTypes = { children: PropTypes.node };
 const StyleDetail = ({ style, position, total, onClose, onChoose, onPrev, onNext }) => {
   const dialogRef = useRef(null);
   const closeRef = useRef(null);
-  const previewButtonRef = useRef(null);
-  const [fullPreview, setFullPreview] = useState(false);
-  const fullPreviewRef = useRef(false);
-  fullPreviewRef.current = fullPreview;
-  const wide = useWideScreen();
 
-  useModal(dialogRef, onClose, { initialFocusRef: closeRef, pausedRef: fullPreviewRef });
-
-  const closeFullPreview = useCallback(() => {
-    setFullPreview(false);
-    previewButtonRef.current?.focus({ preventScroll: true });
-  }, []);
+  useModal(dialogRef, onClose, { initialFocusRef: closeRef });
 
   const titleId = `style-${style.slug}-title`;
 
@@ -82,24 +57,23 @@ const StyleDetail = ({ style, position, total, onClose, onChoose, onPrev, onNext
 
         <div key={style.slug} className="flex-1 min-h-0 overflow-y-auto grid lg:grid-cols-[1.1fr,1fr]">
           <div className="bg-paper border-b lg:border-b-0 lg:border-r border-line p-6 sm:p-10 flex flex-col gap-6">
-            <div className={wide ? "h-[400px] lg:h-[460px]" : "aspect-[4/3]"}>
-              <StylePreview style={style} mode={wide ? "detail" : "card"} />
+            <div className="aspect-[4/3]">
+              <StylePreview style={style} eager />
             </div>
 
             <div className="flex flex-col gap-3">
-              <button
-                ref={previewButtonRef}
-                type="button"
-                onClick={() => setFullPreview(true)}
-                aria-haspopup="dialog"
+              <a
+                href={style.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`${styles.btnSecondary} w-fit !py-3.5`}
               >
-                <FiMaximize2 size={16} /> Προεπισκόπηση ιστοσελίδας
-              </button>
+                Δείτε το demo <FiArrowUpRight size={16} aria-hidden="true" />
+                <span className="sr-only">(ανοίγει σε νέα καρτέλα)</span>
+              </a>
               <p className="text-[13px] text-stone leading-[1.6]">
-                {wide && "Κάντε κύλιση στο παράθυρο για να δείτε όλη την αρχική σελίδα. "}
-                Ενδεικτικό δείγμα σχεδιαστικής κατεύθυνσης — {style.sample.business} «
-                {style.sample.brand}» και το περιεχόμενο είναι φανταστικά.
+                Το demo δείχνει τη βασική σχεδίαση. Χρώματα, φωτογραφίες, κείμενα και λειτουργίες
+                αλλάζουν ανάλογα με τη δική σας επιχείρηση.
               </p>
             </div>
           </div>
@@ -115,17 +89,13 @@ const StyleDetail = ({ style, position, total, onClose, onChoose, onPrev, onNext
               {style.name}
             </h2>
             <p className="mt-4 text-stone text-[16px] leading-[1.7]">{style.description}</p>
-
-            <div className="mt-6 rounded-2xl border border-line bg-paper p-5">
-              <p className="font-serif text-ink text-[18px]">Αφετηρία, όχι έτοιμο template</p>
-              <p className="mt-1.5 text-stone text-[15px] leading-[1.65]">
-                Χρησιμοποιώ αυτό το στυλ ως σχεδιαστική βάση και προσαρμόζω την τελική
-                ιστοσελίδα γύρω από το brand, το περιεχόμενο και τις ανάγκες σας.
-              </p>
-            </div>
+            <p className="mt-3 text-[14px] text-ink/70">
+              Βασίζεται στο template <span className="text-ink font-medium">{style.templateName}</span> της{" "}
+              {style.provider}.
+            </p>
 
             <div className="mt-8">
-              <DetailHeading>Ιδανικο για</DetailHeading>
+              <DetailHeading>Ταιριαζει σε</DetailHeading>
               <div className="flex flex-wrap gap-2">
                 {style.recommendedFor.map((item) => (
                   <span
@@ -139,7 +109,7 @@ const StyleDetail = ({ style, position, total, onClose, onChoose, onPrev, onNext
             </div>
 
             <div className="mt-8">
-              <DetailHeading>Τι περιλαμβανει συνηθως</DetailHeading>
+              <DetailHeading>Τι περιλαμβανει</DetailHeading>
               <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
                 {style.features.map((feature) => (
                   <li key={feature} className="text-[15px] text-ink/80 flex items-start gap-2.5">
@@ -148,28 +118,14 @@ const StyleDetail = ({ style, position, total, onClose, onChoose, onPrev, onNext
                   </li>
                 ))}
               </ul>
+              {style.note && (
+                <p className="mt-5 text-[14px] text-ink/70 leading-[1.6] border-l-2 border-clay/40 pl-3">
+                  {style.note}
+                </p>
+              )}
             </div>
 
-            <div className="mt-8">
-              <DetailHeading>Τι προσαρμοζεται</DetailHeading>
-              <div className="flex flex-wrap gap-2">
-                {styleCustomizations.map((item) => (
-                  <span
-                    key={item}
-                    className="text-[13px] text-ink/80 bg-paper border border-line rounded-full px-3.5 py-1.5"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <p className="mt-8 text-[13px] text-stone leading-[1.6]">
-              Κατασκευή σε WordPress · {style.wordpressStack.join(" · ")}
-              {style.supportsWooCommerce
-                ? " · Πλήρες e-shop με WooCommerce"
-                : " · Μπορεί να επεκταθεί με e-shop (WooCommerce)"}
-            </p>
+            <p className="mt-8 text-[13px] text-stone">{styleStack(style)}</p>
           </div>
         </div>
 
@@ -196,22 +152,15 @@ const StyleDetail = ({ style, position, total, onClose, onChoose, onPrev, onNext
             </span>
           </div>
 
-          <button type="button" onClick={() => onChoose(style)} className={`${styles.btnPrimary} !px-5 sm:!px-6 !py-3.5 whitespace-nowrap`}>
-            Ξεκινήστε με αυτό το στυλ
+          <button
+            type="button"
+            onClick={() => onChoose(style)}
+            className={`${styles.btnPrimary} !px-5 sm:!px-6 !py-3.5 whitespace-nowrap`}
+          >
+            Με ενδιαφέρει αυτό το στυλ
           </button>
         </div>
       </motion.div>
-
-      <AnimatePresence>
-        {fullPreview && (
-          <StyleFullPreview
-            key="full-preview"
-            style={style}
-            onClose={closeFullPreview}
-            onChoose={onChoose}
-          />
-        )}
-      </AnimatePresence>
     </div>
   );
 };
@@ -224,12 +173,14 @@ StyleDetail.propTypes = {
     description: PropTypes.string.isRequired,
     recommendedFor: PropTypes.arrayOf(PropTypes.string).isRequired,
     features: PropTypes.arrayOf(PropTypes.string).isRequired,
-    wordpressStack: PropTypes.arrayOf(PropTypes.string).isRequired,
+    note: PropTypes.string,
+    provider: PropTypes.string.isRequired,
+    theme: PropTypes.string.isRequired,
+    builder: PropTypes.string.isRequired,
+    templateName: PropTypes.string.isRequired,
+    demoUrl: PropTypes.string.isRequired,
     supportsWooCommerce: PropTypes.bool,
-    sample: PropTypes.shape({
-      brand: PropTypes.string.isRequired,
-      business: PropTypes.string.isRequired,
-    }).isRequired,
+    previewImage: PropTypes.string.isRequired,
   }).isRequired,
   position: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,

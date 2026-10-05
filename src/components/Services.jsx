@@ -42,7 +42,7 @@ const Services = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.eyebrow}>Υπηρεσιες</p>
-        <h2 className={styles.h2}>Τι μπορώ να κατασκευάσω για εσάς</h2>
+        <h2 className={styles.h2}>Με τι μπορώ να βοηθήσω</h2>
       </motion.div>
 
       <div className="mt-14">
