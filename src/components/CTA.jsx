@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FiMail, FiLinkedin, FiGithub } from "react-icons/fi";
+import { FiMail, FiLinkedin, FiGithub, FiX } from "react-icons/fi";
 
 import { styles } from "../styles";
+import { STYLE_SELECTED_EVENT } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -11,6 +12,17 @@ const CTA = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
+  const [selectedStyle, setSelectedStyle] = useState(null);
+
+  // A style chosen in the Website Styles section is attached to the enquiry.
+  useEffect(() => {
+    const onStyleSelected = (e) => {
+      setSelectedStyle(e.detail.name);
+      formRef.current?.focus({ preventScroll: true });
+    };
+    window.addEventListener(STYLE_SELECTED_EVENT, onStyleSelected);
+    return () => window.removeEventListener(STYLE_SELECTED_EVENT, onStyleSelected);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,7 +42,9 @@ const CTA = () => {
           to_name: "Giorgos Politis",
           from_email: form.email,
           to_email: "gpolitis.dev@gmail.com",
-          message: form.message,
+          message: selectedStyle
+            ? `Επιλεγμένο στυλ ιστοσελίδας: ${selectedStyle}\n\n${form.message}`
+            : form.message,
         },
         "5tIvp5084QsjiLT_O"
       )
@@ -39,6 +53,7 @@ const CTA = () => {
           setLoading(false);
           alert("Σας ευχαριστώ. Θα επικοινωνήσω μαζί σας το συντομότερο δυνατό.");
           setForm({ name: "", email: "", message: "" });
+          setSelectedStyle(null);
         },
         (error) => {
           setLoading(false);
@@ -66,8 +81,31 @@ const CTA = () => {
           variants={fadeIn("right", "tween", 0.15, 0.7)}
           ref={formRef}
           onSubmit={handleSubmit}
-          className="flex flex-col gap-5"
+          tabIndex={-1}
+          className="flex flex-col gap-5 outline-none"
         >
+          <div aria-live="polite">
+            {selectedStyle && (
+              <div className="flex items-center justify-between gap-3 rounded-xl border border-clay/30 bg-clay/5 py-3 pl-5 pr-2">
+                <p className="text-[14px] text-ink">
+                  <span className="text-stone">Επιλεγμένο στυλ: </span>
+                  <span className="font-medium">{selectedStyle}</span>
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedStyle(null);
+                    formRef.current?.focus();
+                  }}
+                  aria-label="Αφαίρεση επιλεγμένου στυλ"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-ink/70 hover:bg-ink hover:text-cream transition-colors shrink-0"
+                >
+                  <FiX size={15} />
+                </button>
+              </div>
+            )}
+          </div>
+
           <label className="flex flex-col gap-2">
             <span className="text-ink text-[14px] font-medium">Το όνομά σας</span>
             <input
@@ -102,7 +140,11 @@ const CTA = () => {
               required
               value={form.message}
               onChange={handleChange}
-              placeholder="Τι θα θέλατε να κατασκευάσουμε;"
+              placeholder={
+                selectedStyle
+                  ? "Πείτε μου λίγα λόγια για την επιχείρησή σας και τι θα θέλατε να προσαρμόσουμε."
+                  : "Τι θα θέλατε να κατασκευάσουμε;"
+              }
               className="bg-paper border border-line py-3.5 px-5 rounded-xl placeholder:text-stone/60 text-ink outline-none focus:border-ink transition-colors resize-none"
             />
           </label>
