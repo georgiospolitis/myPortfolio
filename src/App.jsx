@@ -1,4 +1,4 @@
-import { Navbar, Hero, Services, Work, About, Process, CTA, Footer } from "./components";
+import { Navbar, Hero, Services, WebsiteStyles, About, Process, CTA, Footer } from "./components";
 
 const App = () => {
   return (
@@ -6,7 +6,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Services />
-      <Work />
+      <WebsiteStyles />
       <About />
       <Process />
       <CTA />

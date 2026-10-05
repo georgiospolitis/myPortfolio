@@ -15,7 +15,7 @@ const industries = [
 const tags = [
   { label: "Εστιατορια", className: "top-[6%] left-[4%] -rotate-6 bg-cream border border-line" },
   { label: "Ξενοδοχεια", className: "top-[2%] right-[6%] rotate-3 bg-clay text-cream" },
-  { label: "Κουρεία", className: "bottom-[30%] left-[0%] rotate-2 bg-cream border border-line" },
+  { label: "Κουρεια", className: "bottom-[30%] left-[0%] rotate-2 bg-cream border border-line" },
   { label: "E-commerce", className: "bottom-[8%] right-[2%] -rotate-3 bg-sage text-cream" },
 ];
 
@@ -48,9 +48,9 @@ const Hero = () => {
                 Ξεκινήστε ένα project
               </button>
             </a>
-            <a href="#work">
+            <a href="#styles">
               <button className="inline-flex items-center justify-center gap-2 bg-transparent text-ink px-7 py-4 rounded-full text-[15px] font-medium tracking-wide border border-ink/20 transition-all duration-300 hover:border-ink hover:-translate-y-0.5">
-                Δείτε τη δουλειά μου
+                Διαλέξτε στυλ ιστοσελίδας
               </button>
             </a>
           </div>
