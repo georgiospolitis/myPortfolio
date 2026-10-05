@@ -51,14 +51,14 @@ const CTA = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Σας ευχαριστώ. Θα επικοινωνήσω μαζί σας το συντομότερο δυνατό.");
+          alert("Ευχαριστώ! Το μήνυμά σας στάλθηκε και θα σας απαντήσω σύντομα.");
           setForm({ name: "", email: "", message: "" });
           setSelectedStyle(null);
         },
         (error) => {
           setLoading(false);
           console.error(error);
-          alert("Κάτι πήγε στραβά. Παρακαλώ προσπαθήστε ξανά.");
+          alert("Κάτι πήγε στραβά και το μήνυμα δεν στάλθηκε. Δοκιμάστε ξανά ή στείλτε μου email.");
         }
       );
   };
@@ -70,9 +70,9 @@ const CTA = () => {
         className="text-center max-w-2xl mx-auto"
       >
         <p className={`${styles.eyebrow} justify-center`}>Επικοινωνια</p>
-        <h2 className={styles.h2}>Έχετε κάποιο project στο μυαλό σας;</h2>
+        <h2 className={styles.h2}>Ας μιλήσουμε για το site σας</h2>
         <p className="mt-4 text-stone text-[17px] sm:text-[18px] leading-[1.7]">
-          Ας φτιάξουμε κάτι που λειτουργεί για την επιχείρησή σας.
+          Γράψτε μου λίγα λόγια για την επιχείρησή σας και θα σας απαντήσω σύντομα.
         </p>
       </motion.div>
 
@@ -132,7 +132,7 @@ const CTA = () => {
           </label>
           <label className="flex flex-col gap-2">
             <span className="text-ink text-[14px] font-medium">
-              Πείτε μου για το project σας
+              Τι χρειάζεστε;
             </span>
             <textarea
               rows={5}
@@ -142,15 +142,15 @@ const CTA = () => {
               onChange={handleChange}
               placeholder={
                 selectedStyle
-                  ? "Πείτε μου λίγα λόγια για την επιχείρησή σας και τι θα θέλατε να προσαρμόσουμε."
-                  : "Τι θα θέλατε να κατασκευάσουμε;"
+                  ? "Πείτε μου λίγα λόγια για την επιχείρησή σας και τι θα θέλατε στο site."
+                  : "Π.χ. νέο site για το εστιατόριό μου, με μενού και κρατήσεις."
               }
               className="bg-paper border border-line py-3.5 px-5 rounded-xl placeholder:text-stone/60 text-ink outline-none focus:border-ink transition-colors resize-none"
             />
           </label>
 
           <button type="submit" className={`${styles.btnPrimary} w-fit mt-2`}>
-            {loading ? "Αποστολή..." : "Ξεκινήστε ένα project"}
+            {loading ? "Αποστολή…" : "Αποστολή μηνύματος"}
           </button>
         </motion.form>
 

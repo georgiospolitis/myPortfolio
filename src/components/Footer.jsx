@@ -11,7 +11,7 @@ const Footer = () => {
         <div>
           <p className="font-serif text-[20px] text-ink">GEORGIOS POLITIS</p>
           <p className="mt-3 text-stone text-[15px] max-w-xs">
-            Web Development · E-commerce · Digital Experiences
+            Ιστοσελίδες · E-shops · WordPress
           </p>
         </div>
 
