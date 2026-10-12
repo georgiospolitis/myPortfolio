@@ -70,9 +70,9 @@ const CTA = () => {
         className="text-center max-w-2xl mx-auto"
       >
         <p className={`${styles.eyebrow} justify-center`}>Επικοινωνια</p>
-        <h2 className={styles.h2}>Ας μιλήσουμε για το site σας</h2>
+        <h2 className={styles.h2}>Ας δημιουργήσουμε κάτι μαζί</h2>
         <p className="mt-4 text-stone text-[17px] sm:text-[18px] leading-[1.7]">
-          Γράψτε μου λίγα λόγια για την επιχείρησή σας και θα σας απαντήσω σύντομα.
+          Περιγράψτε τις ανάγκες της επιχείρησής σας και το project που σχεδιάζετε, ώστε να συζητήσουμε την κατάλληλη λύση.
         </p>
       </motion.div>
 

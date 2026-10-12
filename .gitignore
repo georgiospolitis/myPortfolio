@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 !/node_modules/
 node_modules
+
+# Local social media content and generated assets
+/social-media/
+
+# Locally installed Codex skills
+/.agents/skills/
