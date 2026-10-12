@@ -32,12 +32,12 @@ const Hero = () => {
             Ιστοσελιδες · E-shops · WordPress
           </p>
           <h1 className="font-serif text-ink font-medium leading-[1.05] text-[42px] xs:text-[52px] sm:text-[64px] lg:text-[72px] tracking-[-0.01em]">
-            Ιστοσελίδες για μικρές επιχειρήσεις,{" "}
+            Ιστοσελίδες για μικρές και μεσαίες επιχειρήσεις,{" "}
             <span className="italic text-clay">φτιαγμένες σωστά.</span>
           </h1>
           <p className="mt-7 text-stone text-[17px] sm:text-[19px] leading-[1.7] max-w-lg">
-            Φτιάχνω ιστοσελίδες και e-shops, από το πρώτο σχέδιο μέχρι να βγουν online.
-            Και είμαι εδώ και μετά.
+            Σχεδιασμός και κατασκευή ιστοσελίδων και e-shops, από την πρώτη ιδέα μέχρι τη δημοσίευση. 
+            Με υποστήριξη που συνεχίζεται και μετά.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">

@@ -12,9 +12,9 @@ import StylePreview from "./StylePreview";
 import StyleDetail from "./StyleDetail";
 
 const steps = [
-  "Διαλέγετε ένα στυλ",
-  "Το προσαρμόζω στην επιχείρησή σας",
-  "Το site σας βγαίνει online",
+  "Επιλέγετε το σχέδιο που σας αρέσει",
+  "Το προσαρμόζουμε στις ανάγκες σας",
+  "Η ιστοσελίδα σας είναι έτοιμη να βγει online",
 ];
 
 // The heading and each card reveal on their own: on small screens this section
@@ -92,7 +92,7 @@ const CustomCard = ({ i }) => (
         Δεν βρήκατε αυτό που ψάχνατε;
       </h3>
       <p className="mt-3 text-stone text-[16px] leading-[1.7] max-w-md">
-        Αν κανένα στυλ δεν σας ταιριάζει, σχεδιάζω το site σας από την αρχή.
+        Αν τα διαθέσιμα σχέδια δεν σας καλύπτουν, η ιστοσελίδα σας μπορεί να σχεδιαστεί και να κατασκευαστεί από την αρχή, στα μέτρα της επιχείρησής σας.
       </p>
       <a
         href="#contact"
@@ -144,13 +144,14 @@ const WebsiteStyles = () => {
         viewport={{ once: true, amount: 0.5 }}
       >
         <p className={styles.eyebrow}>Στυλ ιστοσελιδας</p>
-        <h2 className={styles.h2}>Διαλέξτε το στυλ που σας ταιριάζει</h2>
+        <h2 className={styles.h2}>Επιλέξτε το στυλ που σας ταιριάζει</h2>
       </motion.div>
 
       <p className="mt-6 text-stone text-[16px] sm:text-[17px] leading-[1.7] max-w-2xl">
-        Κάθε στυλ βασίζεται σε ένα έτοιμο WordPress template. Ξεκινάω από αυτό και αλλάζω
-        χρώματα, κείμενα, φωτογραφίες και σελίδες, ώστε το site να ταιριάζει στη δική σας
-        επιχείρηση.
+        Ανακαλύψτε διαφορετικά σχέδια ιστοσελίδων και επιλέξτε αυτό που ταιριάζει 
+        στην επιχείρησή σας. Κάθε σχέδιο βασίζεται σε ένα έτοιμο WordPress template, 
+        το οποίο προσαρμόζεται με τα δικά σας χρώματα, φωτογραφίες και περιεχόμενο, 
+        ώστε το τελικό αποτέλεσμα να εκφράζει τη δική σας επαγγελματική ταυτότητα.
       </p>
 
       <ol className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-8">
